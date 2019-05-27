@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Squidji.tk</title>
+<meta charset="utf-8"/>
+<link rel="icon" href="icon.ico" type="image/ico" sizes="16x16">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="mobile.css">
+<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='index.js'></script>
+
+</head>
+
+<body>
+
+<header>
+	<div id='DesktopHeader'>
+		<a id='name' onclick='openPage("Home")' style='float:left;color:black;'>Squidji</a>
+		<a class='tab' id='b-archive' onclick='openPage("Archive")'>Archive</a>
+		<a class='tab' id='b-reviews' onclick='openPage("Review")'>Reviews</a>
+		<a class='tab' id='b-portfolio' onclick='openPage("Portfolio")'>Art</a>
+		<a class='tab' id='b-inkwork' onclick='openPage("Inkwork")'>Inkwork</a>
+		<a class='tab' id='b-about' onclick='openPage("About")'>About</a>
+	</div>
+	<div id='MobileHeader'>
+		<a id='mobileName' style='color:black;background-color:white;' onclick='openPage("Home")'>Squidji</a>
+		<div id='myLinks'>
+			<a onclick='openPage("About")'>About</a>
+			<a onclick='openPage("Inkwork")'>Inkwork</a>
+			<a onclick='openPage("Portfolio")'>Art</a>
+			<a onclick='openPage("Review")'>Reviews</a>
+			<a onclick='openPage("Archive")'>Archive</a>
+		</div>
+		<a class='icon' onclick='toggleBar();'>
+			<i class='fa fa-bars'></i>
+		</a>
+	</div>
+</header>
+
+<div class='page' id='Home' style='display:block;'>
+	<img src='img/self.png' id='homeprofile' onclick='openPage("About")'/>
+	<h1><a>Graphic Design</a>,<br><a>Programming</a>,<br>and <a>More</a>!!</h1>
+</div>
+
+<div class='page' id='About'>
+	<h1>About - Ben Squidji</h1>
+	<h3>I do <a>web design</a>, <a>graphic design</a>, <a>videogame design</a>, <a>programming</a>, <a>art</a>, <a>reviews</a>, and <a>even more</a>! This website is a collection of all the things I have created.<br><br>Check out my social media:<h3>
+	<div class='button' onclick='window.open("https://twitter.com/ben_squidji","_blank");'>Twitter</div><div class='button' onclick='window.open("https://www.instagram.com/ben__squidji/","_blank");'>Instagram</div><div class='button' onclick='window.open("https://github.com/Squidji/","_blank");'>Github</div>
+</div>
+
+<div class='page' id='Inkwork'>
+	<h1>Inkwork</h1>
+	<div class='box' onclick='window.open("http://inkwork.tk/","_blank");'>Home</div>
+	<div class='box' onclick='window.open("https://squidji.github.io/biti/","_blank");'>Biti</div>
+	<div class='box' onclick='alert("WARNING : Do not use these if you dont know how to use them!");window.open("https://squidji.tk/inkwork/Ikagaku.zip","_blank");'>Ikagaku</div>
+	<div class='box' onclick='window.open("https://squidji.tk/inkwork/ideak","_blank");'>Ideak</div>
+</div>
+
+<div class='page' id='Portfolio'>
+	<h1>Art</h1>
+	<div class='box' onclick='openPage("PortArt")'>Drawings</div>
+	<div class='box' onclick='openPage("PortGraphic")'>Graphic Design</div>
+	<div class='box' onclick='openPage("PortPhoto")'>Photography</div>
+</div>
+
+<div class='page' id='PortArt'>
+	<h1 style='margin-top:120px;'>Drawings</h1>
+	<img src='img/art/dragon000.jpg' onclick='window.open("img/art/dragon000.jpg", "_blank");'/>
+	<img src='img/art/landscape.jpg' onclick='window.open("img/art/landscape.jpg", "_blank");'/>
+	<img src='img/art/dragon001.jpg' onclick='window.open("img/art/dragon001.jpg", "_blank");'/>
+	<img src='img/art/dragon002.jpg' onclick='window.open("img/art/dragon002.jpg", "_blank");'/>
+	<img src='img/art/sunset.jpg' onclick='window.open("img/art/sunset.jpg", "_blank");'/>
+	<img src='img/art/dragon003.jpg' onclick='window.open("img/art/dragon003.jpg", "_blank");'/>
+</div>
+
+<div class='page' id='PortGraphic'>
+	<h1 style='margin-top:120px;'>Graphic Design</h1>
+	<img src='img/art/graph000.png' onclick='window.open("img/art/graph000.png", "_blank");'/>
+</div>
+
+<div class='page' id='PortPhoto'>
+	<h1 style='margin-top:120px;'>Photography</h1>
+	<img src='img/art/photo000.jpg' onclick='window.open("img/art/photo000.jpg", "_blank");'/>
+	<img src='img/art/photo001.jpg' onclick='window.open("img/art/photo001.jpg", "_blank");'/>
+	<img src='img/art/photo002.jpg' onclick='window.open("img/art/photo002.jpg", "_blank");'/>
+	<img src='img/art/photo003.jpg' onclick='window.open("img/art/photo003.jpg", "_blank");'/>
+	<img src='img/art/photo004.jpg' onclick='window.open("img/art/photo004.jpg", "_blank");'/>
+</div>
+
+<div class='page' id='Review'>
+	<h1 style='color:white;'>Reviews</h1>
+	<div class='Revbutton' onclick='openPage("RevAbout")'>How My Ratings Work</div><br>
+	<div class='box' onclick='openPage("RevMovie")'>Movies</div>
+	<div class='box' onclick='openPage("RevVideogame")'>Video Games</div>
+	<div class='box' onclick='openPage("RevTelevision")'>TV-Shows</div>
+</div>
+
+<div class='page' id='RevAbout'>
+	<h1>How My Ratings Work</h1>
+	<h3>When reviewing a movie, TV show, or videogame, I will give them a rating out of ten:</h3>
+	<h3 style='color:black;'>10/10 Awesome! A favorite of mine.</h3>
+	<h3 style='color:black;'>9/10 Really good.</h3>
+	<h3 style='color:black;'>8/10 Good, but has some problems</h3>
+	<h3 style='color:black;'>7/10 Enjoyable, has some good moments.</h3>
+	<h3 style='color:black;'>6/10 Not bad, just nothing incredible.</h3>
+	<h3 style='color:black;'>5/10 Painfully mediocre.</h3>
+	<h3 style='color:black;'>4/10 Plain not good.</h3>
+	<h3 style='color:black;'>3/10 Garbage</h3>
+	<h3 style='color:black;'>2/10 Hot garbage.</h3>
+	<h3 style='color:black;'>1/10 Steaming pile of crap.</h3>
+	<h3 style='color:black;'>0/10 You didn't even try.</h3>
+</div>
+
+<div class='page' id='RevMovie'>
+	<div class='Revbutton' onclick='openPage("Review")'><< Back</div><br>
+	<table>
+		<tr>
+			<td class='RevTitle'>Aquaman</td>
+			<td><img src='img/posters/aquaman.jpg'/></td>
+			<td>2018</td>
+			<td>6/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Avengers Infinity War</td>
+			<td><img src='img/posters/infinitywar.jpg'/></td>
+			<td>2018</td>
+			<td>10/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Iron Man</td>
+			<td><img src='img/posters/ironman.jpg'/></td>
+			<td>2008</td>
+			<td>8/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Jurasic World : Fallen Kingdom</td>
+			<td><img src='img/posters/fallenkingdom.jpg'/></td>
+			<td>2018</td>
+			<td>7/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Star Wars : The Last Jedi</td>
+			<td><img src='img/posters/lastjedi.jpg'/></td>
+			<td>2017</td>
+			<td>7/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>The Lego Movie 2 : The Second Part</td>
+			<td><img src='img/posters/secondpart.jpg'/></td>
+			<td>2019</td>
+			<td>9/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Venom</td>
+			<td><img src='img/posters/venom.jpg'/></td>
+			<td>2018</td>
+			<td>6/10</td>
+		</tr>
+	</table>
+</div>
+
+<div class='page' id='RevVideogame'>
+	<div class='Revbutton' onclick='openPage("Review")'><< Back</div><br>
+	<table>
+		<tr>
+			<td class='RevTitle'>Super Mario Odyssey</td>
+			<td><img src='img/posters/odyssey.jpg'/></td>
+			<td>2017</td>
+			<td>Nintendo Switch</td>
+			<td>9/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Splatoon 2</td>
+			<td><img src='img/posters/Splatoon.jpg'/></td>
+			<td>2017</td>
+			<td>Nintendo Switch</td>
+			<td>9/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Super Smash Bros. Brawl</td>
+			<td><img src='img/posters/brawl.jpg'/></td>
+			<td>2008</td>
+			<td>Wii</td>
+			<td>8/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Super Smash Bros. for Nintendo 3DS</td>
+			<td><img src='img/posters/3ds.jpg'/></td>
+			<td>2014</td>
+			<td>3DS</td>
+			<td>7/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Super Smash Bros. Ultimate</td>
+			<td><img src='img/posters/ultimate.jpg'/></td>
+			<td>2018</td>
+			<td>Nintendo Switch</td>
+			<td>10/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>The Legend of Zelda : Breath of the Wild</td>
+			<td><img src='img/posters/botw.jpg'/></td>
+			<td>2017</td>
+			<td>Wii U; Nintendo Switch</td>
+			<td>10/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Undertale</td>
+			<td><img src='img/posters/undertale.jpg'/></td>
+			<td>2015</td>
+			<td>PC; Nintendo Switch; PS4; PSVita</td>
+			<td>7/10</td>
+		</tr>
+	</table>
+</div>
+
+<div class='page' id='RevTelevision'>
+	<div class='Revbutton' onclick='openPage("Review")'><< Back</div><br>
+	<table>
+		<tr>
+			<td class='RevTitle'>Attack on Titan [S1]</td>
+			<td><img src='img/posters/aot.jpg'/></td>
+			<td>2013</td>
+			<td>5/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Bandersnatch</td>
+			<td><img src='img/posters/bandersnatch.jpg'/></td>
+			<td>2018</td>
+			<td>6/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Castlevania</td>
+			<td><img src='img/posters/castlevania.jpg'/></td>
+			<td>2017</td>
+			<td>9/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>My Hero Academia</td>
+			<td><img src='img/posters/myhero.jpg'/></td>
+			<td>2017</td>
+			<td>8/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>One Punch Man</td>
+			<td><img src='img/posters/onepunch.jpg'/></td>
+			<td>2015</td>
+			<td>8/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Sherlock</td>
+			<td><img src='img/posters/Sherlock.jpg'/></td>
+			<td>2010</td>
+			<td>7/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Stranger Things</td>
+			<td><img src='img/posters/stranger.jpg'/></td>
+			<td>2016</td>
+			<td>7/10</td>
+		</tr>
+		<tr>
+			<td class='RevTitle'>Voltron : Legendary Defender [S1]</td>
+			<td><img src='img/posters/voltron.jpg'/></td>
+			<td>2016</td>
+			<td>7/10</td>
+		</tr>
+	</table>
+</div>
+
+<div class='page' id='Archive'>
+	<h1>Archive</h1>
+	<div class='box' onclick='openPage("ArchTime")'>Time Machine</div>
+	<div class='box' onclick='openPage("ArchMusic")'>Music I Like</div>
+	<div class='box' onclick='openPage("ArchBios")'>Twitter Bio's</div>
+	<div class='box' onclick='openPage("ArchSmash")'>Smash Bros.</div>
+</div>
+
+<div class='page' id='ArchTime'>
+	<h1>Time Machine</h1>
+	<h4 onclick='window.open("https://squidji.tk/","_blank");'>v5.0.0 Unagi</h4>
+	<ul>
+		<li>Completely New Design</li>
+		<li>New Logo</li>
+		<li>New Backdrop</li>
+		<li>Added Art</li>
+		<li>Added Twitter Bios</li>
+		<li>Added Music I Like</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v4.1.html","_blank");'>v4.1.0 California Roll</h4>
+	<ul>
+		<li>New Animations</li>
+		<li>Added Biti Homepage</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v4.0.html","_blank");'>v4.0.0 California Roll</h4>
+	<ul>
+		<li>New Design</li>
+		<li>New Animations</li>
+		<li>Updated Inkwork</li>
+		<li>External CSS</li>
+		<li>New Tag System</li>
+		<li>Moved TimeMachine to Inkwork</li>
+		<li>Added Fighters to SPECIAL: Super Smash Bros.</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v3.3.html","_blank");'>v3.3.0</h4>
+	<ul>
+		<li>Added "Super Smash Bros." Section</li>
+		<li>Added Biti</li>
+		<li>Removed Twitter</li>
+		<li>Removed Videos</li>
+		<li>Bug Fixes</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v3.2.html","_blank");'>v3.2.0</h4>
+	<ul>
+		<li>Updated Mobile Website CSS</li>
+		<li>Changed Domain from squidji.github.io to squidji.tk</li>
+		<li>Added Music to Reviews</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v3.1.html","_blank");'>v3.1.0</h4>
+	<ul>
+		<li>Added Twitter</li>
+		<li>Updated Inkwork</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v3.0.html","_blank");'>v3.0.0</h4>
+	<ul>
+		<li>Updated Colors</li>
+		<li>New Toolbar</li>
+		<li>New Easy to Use Design</li>
+		<li>Updated Version History</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v2.4.html","_blank");'>v2.4.0</h4>
+	<ul>
+		<li>Added Videos</li>
+		<li>Added Youtube</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v2.3.html","_blank");'>v2.3.0</h4>
+	<ul>
+		<li>Added Inkwork</li>
+		<li>Moved Dungeons and Doggos to Inkwork</li>
+		<li>Bug Fixes to TimeMachine</li>
+		<li>Bug Fixes to Social Media</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v2.2.html","_blank");'>v2.2.0</h4>
+	<ul>
+		<li>Added Panels Engine</li>
+		<li>Added TV Shows to Reviews</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v2.1.html","_blank");'>v2.1.0</h4>
+	<ul>
+		<li>Updated Buttons</li>
+		<li>Time Machine for Dungeons & Doggos</li>
+		<li>Made header picture home button</li>
+		<li>Added Reviews</li>
+		<li>Updated Headings</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v2.0.html","_blank");'>v2.0.0</h4>
+	<ul>
+		<li>Updated header with picture</li>
+		<li>Added color-changing bar</li>
+		<li>Added Time Machine</li>
+		<li>Changed 'Project Panels' to Dungeons and Doggos</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v1.4.html","_blank");'>v1.4.0</h4>
+	<ul>
+		<li>Updated header with picture</li>
+		<li>Added color-changing bar</li>
+		<li>Added Time Machine</li>
+		<li>Changed 'Project Panels' to Dungeons and Doggos</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v1.3.html","_blank");'>v1.3.0</h4>
+	<ul>
+		<li>Added 'Movies'</li>
+		<li>Added Github Link</li>
+		<li>Added Background Image to Panels</li>
+		<li>Added 'Version History'</li>
+		<li>Changed Instagram Link</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v1.2.html","_blank");'>v1.2.0</h4>
+	<ul>
+		<li>Changed Header Style</li>
+		<li>Added Background Image</li>
+	</ul>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v1.1.html","_blank");'>v1.1.0</h4>
+	<h4 onclick='window.open("https://squidji.tk/inkwork/timemachine/v1.0.html","_blank");'>v1.0.0</h4>
+</div>
+
+<div class='page' id='ArchSmash'>
+	<h1>Under Construction</h1>
+</div>
+
+<div class='page' id='ArchMusic'>
+	<h1>Music I Like</h1>
+	<img src='img/posters/persona5.jpg' onclick='window.open("https://itunes.apple.com/us/album/persona-5-original-soundtrack/1226945984", "_blank");'/>
+	<img src='img/posters/deltarune.jpg' onclick='window.open("https://tobyfox.bandcamp.com/album/deltarune-chapter-1-ost", "_blank");'/>
+	<img src='img/posters/personaq2.jpg' onclick='window.open("https://www.youtube.com/watch?v=9_Q2gb8ZvDE", "_blank");'/>
+	<img src='img/posters/mewmore.jpg' onclick='window.open("https://www.youtube.com/watch?v=49L7_HydIrI", "_blank");'/>
+	<img src='img/posters/settleit.jpg' onclick='window.open("https://www.youtube.com/watch?v=yhGS5sf3yCk", "_blank");'/>
+</div>
+
+<div class='page' id='ArchBios'>
+	<h1>Twitter Bios</h1>
+	<h4 onclick='window.open("https://twitter.com/ben_squidji","_blank");'>I do stuff with code. Plant, Inkling, & Robin Main</h4>
+	<p>Feb. 26st, 2019</p>
+	<h4 onclick='window.open("https://twitter.com/ben_squidji","_blank");'>I do stuff with code. Plant & Robin Main</h4>
+	<p>Feb. 21st, 2019</p>
+	<h4 onclick='window.open("https://twitter.com/ben_squidji","_blank");'>I do stuff with code.</h4>
+	<p>Feb. 17th, 2019</p>
+	<h4 onclick='window.open("https://twitter.com/ben_squidji","_blank");'>If you think Plant sucks just leaf my son alone.</h4>
+	<p>Feb. 10th, 2019</p>
+	<h4 onclick='window.open("https://twitter.com/ben_squidji","_blank");'>PLANT PLANT PLANT P L A N T</h4>
+	<p>Jan. 28th, 2019</p>
+	<h4 onclick='window.open("https://twitter.com/ben_squidji","_blank");'>Inkling, Corrin, Zelda Main</h4>
+	<p>Jan. 26th, 2019</p>
+	<h4 onclick='window.open("https://twitter.com/ben_squidji","_blank");'>Inkling, Zelda, and Plant(?) Main</h4>
+	<p>Jan. 26th, 2019</p>
+	<h4 onclick='window.open("https://twitter.com/ben_squidji","_blank");'>Memelord42069</h4>
+	<p>Jan. 11th, 2019</p>
+	<h4 onclick='window.open("https://twitter.com/ben_squidji","_blank");'>im an inkling main so escape while you can</h4>
+	<p>Dec. 31th, 2018</p>
+	<h4 onclick='window.open("https://twitter.com/ben_squidji","_blank");'>Horribly Terrible Mr. Lame</h4>
+	<p>Dec. 29th, 2018</p>
+	<h4 onclick='window.open("https://twitter.com/ben_squidji","_blank");'>No</h4>
+	<p>First Bio</p>
+</div>
+
+<footer>
+Website Unagi v5.0.11 Created by Ben Squidji
+</footer>
+
+</body>
+</html>

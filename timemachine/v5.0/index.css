@@ -1,0 +1,351 @@
+/* SQUIDJI.TK */
+body {
+	background-image: url('img/back.png');
+	font-family: 'Work Sans', sans-serif;
+	margin: 0px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: black;
+}
+#DesktopHeader {
+	background-color: black;
+	overflow: hidden;
+	background-image: url('img/bar.png');
+	position: fixed;
+	width: 100%;
+	top: 0;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#DesktopHeader a {
+	float: right;
+	color: white;
+	font-size: 30px;
+	text-align: center;
+	padding: 14px 16px;
+}
+#DesktopHeader a:hover {
+	color: #1faee3;
+}
+h1 {
+	font-size: 87px;
+}
+.button {
+	border: solid 7px;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 17px;
+	cursor: pointer;
+}
+.button:hover {
+	color: white;
+}
+.page {
+	display: none;
+}
+footer {
+	opacity: 0;
+	color: white;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	transition: 0.5s;
+	font-size: 27px;
+	cursor: default;
+}
+footer:hover {
+	opacity: 1;
+}
+a {
+	cursor: pointer;
+}
+h3 {
+	font-size: 50px;
+	color: white;
+	margin-bottom: 32px;
+}
+h2 {
+	font-size: 77px;
+}
+table {
+	color:black;
+	width: 90%
+}
+th, td {
+	border-bottom: 3px solid black;
+	font-size: 25px;
+	text-align: center;
+}
+td img {
+	width: 100px;
+}
+h4 {
+	font-size: 50px;
+	border-bottom: 2px solid white;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+/* HOME BAR */
+#Home {
+	margin: 20px;
+	margin-top: 83px;
+	display: block;
+}
+#homeprofile {
+	width: 450px;
+	border-radius: 10px;
+	transition: 0.5s;
+	cursor: pointer;
+}
+#homeprofile:hover {
+	width: 500px;
+	border-radius: 15px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
+}
+#Home h1 {
+	float:right;
+	text-align:right;
+}
+#Home h1 a:hover {
+	color: white;
+}
+#Home .button {
+	width: 400px;
+	margin-top: 30px;
+	float: center;
+}
+
+/* ABOUT */
+#About {
+	margin-top: 123px;
+	margin-right: 50px;
+	margin-left: 40%;
+	text-align: right;
+}
+#About h2 {
+	font-size: 57px;
+}
+#About h3 {
+	font-size: 30px;
+}
+#About h3 a:hover {
+	color: black;
+}
+#About h2:hover {
+	color:white;
+	cursor: pointer;
+}
+
+/* INKWORK */
+#Inkwork {
+	margin: 40px;
+	margin-top: 96px;
+}
+#Inkwork .box {
+	width: 300px;
+	border: solid 4px;
+	height: 320px;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 320px; 
+	font-size: 40px;
+	border-color: white;
+	border-radius: 10px;
+	display: inline-block;
+	margin-left: 10px;
+	cursor: pointer;
+	margin-bottom: 13px;
+}
+#Inkwork .box:hover {
+	color: #1faee3;
+	border-color: #1faee3;
+}
+#Inkwork h1 {
+	color: white;
+}
+
+/* PORTFOLIO */
+#Portfolio {
+	margin: 40px;
+	margin-top: 96px;
+}
+#Portfolio .box {
+	width: 300px;
+	border: solid 4px;
+	height: 320px;
+	color: black;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 320px; 
+	font-size: 40px;
+	border-color: black;
+	border-radius: 10px;
+	display: inline-block;
+	margin-left: 10px;
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+#Portfolio .box:hover {
+	border-color: white;
+	color: white;
+}
+#PortArt {
+	margin: 40px;
+	margin-top: 96px;
+}
+#PortArt img {
+	border-radius: 10px;
+	height: 200px;
+	transition: 0.5s;
+}
+#PortArt img:hover {
+	border-radius: 20px;
+	height: 225px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
+	cursor: pointer;
+}
+#PortGraphic {
+	margin: 40px;
+	margin-top: 96px;
+}
+#PortGraphic img {
+	border-radius: 10px;
+	height: 200px;
+	transition: 0.5s;
+}
+#PortGraphic img:hover {
+	border-radius: 20px;
+	height: 225px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
+	cursor: pointer;
+}
+#PortPhoto {
+	margin: 40px;
+	margin-top: 96px;
+}
+#PortPhoto img {
+	border-radius: 10px;
+	height: 200px;
+	transition: 0.5s;
+}
+#PortPhoto img:hover {
+	border-radius: 20px;
+	height: 225px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
+	cursor: pointer;
+}
+
+/* REVIEWS */
+#Review {
+	margin: 30px;
+	margin-top: 100px;
+}
+#Review .box {
+	width: 300px;
+	border: solid 4px;
+	height: 320px;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 320px; 
+	font-size: 40px;
+	border-color: white;
+	border-radius: 10px;
+	display: inline-block;
+	margin-left: 10px;
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+#Review .box:hover {
+	border-color: black;
+	color: black;
+}
+.Revbutton {
+	width: 925px;
+	border: solid 4px;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 27px;
+	border-color: white;
+	border-radius: 10px;
+	display: inline-block;
+	margin-left: 10px;
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.Revbutton:hover {
+	border-color: black;
+	color: black;
+}
+#RevMovie, #RevVideogame, #RevTelevision {
+	margin: 30px;
+	margin-top: 100px;
+}
+#RevAbout {
+	margin: 30px;
+	margin-top: 100px;
+}
+.RevTitle {
+	font-size: 40px;
+	text-align: left;
+}
+
+/* ARCHIVE */
+#Archive {
+	margin: 30px;
+	margin-top: 100px;
+}
+#Archive .box {
+	width: 300px;
+	border: solid 4px;
+	height: 320px;
+	color: black;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 320px; 
+	font-size: 40px;
+	border-color: black;
+	border-radius: 10px;
+	display: inline-block;
+	margin-left: 10px;
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+#Archive .box:hover {
+	border-color: white;
+	color: white;
+}
+#ArchTime, #ArchMusic, #ArchBios, #ArchSmash {
+	margin: 30px;
+	margin-top: 100px;
+}
+#ArchTime li {
+	font-size: 20px;
+}
+#ArchMusic img {
+	border-radius: 10px;
+	height: 200px;
+	transition: 0.5s;
+}
+#ArchMusic img:hover {
+	border-radius: 20px;
+	height: 215px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
+	cursor: pointer;
+}
