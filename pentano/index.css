@@ -1,0 +1,111 @@
+body {
+	background-color: #1d1d1d;
+	color: white;
+	font-family: 'Dosis', sans-serif;
+	letter-spacing: 5px;
+	margin: 0px;
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 80%;
+}
+
+h1 {
+	margin-bottom: 10px;
+	margin-top: 0px;
+	font-size: 50px;
+	color: #008cff;
+}
+h2 {
+	margin-top: 0px;
+	font-size: 20px;
+}
+h3 {
+	margin-top: 0px;
+	font-size: 20px;
+	transition: 0.4s;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+h3:hover {
+	color: #008cff;
+	letter-spacing: 8px;
+}
+ol {
+	margin: 0px;
+	padding-left: 20px;
+	font-size: 30px;
+	margin-left: 10px;
+}
+li {
+	cursor: pointer;
+	transition: 0.3s;
+	letter-spacing: 5px;
+}
+li:hover {
+	letter-spacing: 8px;
+	color: #008cff;
+}
+input {
+	margin-top: 20px;
+	width: 30%;
+	font-size: 30px;
+	background-color: #3b3b3b;
+	color: white;
+	margin-bottom: 10px;
+}
+
+.page {
+	display: none;
+}
+back-node {
+	cursor: pointer;
+	transition: 0.5s;
+	letter-spacing: 5px;
+}
+back-node:hover {
+	letter-spacing: 8px;
+	color: #008cff;
+}
+
+green-bar, blue-bar {
+	width: 200px;
+	background-color: #3b3b3b;
+	height: 20px;
+	display: inline-block;
+}
+green-bar div{
+	background-color: green;
+	width: 0%;
+	height: 100%;
+}
+blue-bar div{
+	background-color: blue;
+	width: 0%;
+	height: 100%;
+}
+
+#logpfp {
+	width: 400px;
+}
+@media screen and (max-width: 500px) {
+	#logpfp {
+		width: 95%;
+	}
+	input {
+		width: 95%;
+	}
+}
+#logbox {
+	background-color: #3b3b3b;
+	padding: 20px;
+	cursor: pointer;
+	margin-top: 5px;
+	border-radius: 0px 30px 30px 30px;
+}
+#logname {
+	font-size: 30px;
+	color: #008cff;
+}
+#logtext {
+	font-size: 20px;
+}

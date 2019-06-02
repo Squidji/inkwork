@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pentano</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="index.css">
+	<script src='player.js'></script>
+	<script src='reference.js'></script>
+	<script src='dialogue.js'></script>
+	<script src='locations.js'></script>
+	<script src='items.js'></script>
+	<script src='index.js'></script>
+</head>
+<body>
+
+<div class='page' id='menu'>
+	<h1 id='h1dhome'>Location, World - Time</h1>
+	<h2 id='h2dhome'>Name - Lv.X  - HP [BAR]</h2>
+	<ol>
+		<li onclick=''>Explore</li>
+		<li onclick='loadPage("stata")'>Stats</li>
+		<li onclick='loadPage("items")'>Items</li>
+		<li onclick='loadPage("area")'>Map</li>
+		<li onclick='loadPage("opti")'>Settings</li>
+	</ol>
+</div>
+
+<div class='page' id='dialogue'>
+	<img id='logpfp'/>
+	<div id='logbox'>
+		<div id='logname'></div>
+		<div id='logtext'></div>
+	</div>
+</div>
+
+<div class='page' id='stats'>
+	<back-node onclick='loadPage("defhome")'><i class='fa fa-caret-left'></i> Back</back-node>
+	<h1 id='stathead'></h1>
+	<h2 id='statbar2'></h2>
+	<h2 id='statbar3'></h2>
+</div>
+
+<div class='page' id='items'>
+	<back-node onclick='loadPage("defhome")'><i class='fa fa-caret-left'></i> Back</back-node>
+	<h1>Items</h1>
+</div>
+
+<div class='page' id='map'>
+	<back-node onclick='loadPage("defhome")'><i class='fa fa-caret-left'></i> Back</back-node>
+	<h1>Map</h1>
+</div>
+
+<div class='page' id='settings'>
+	<back-node onclick='loadPage("defhome")'><i class='fa fa-caret-left'></i> Back</back-node>
+	<h1>Settings</h1>
+	<h3 onclick='loadPage("opti_name")'>Change Name</h3>
+	<h3 onclick='loadPage("opti_file")'>Save Data as File</h3>
+</div>
+
+<div class='page' id='settings_name'>
+	<back-node onclick='loadPage("opti")'><i class='fa fa-caret-left'></i> Back</back-node>
+	<h1>Settings - Change Name</h1>
+	<input type='text' id='opti_namefield'/>
+	<h3 id='opti_nameapply'>Apply Changes</h3>
+</div>
+
+<script>loadPage('initdio_tutorial001');</script>
+
+</body>
+</html>
