@@ -95,14 +95,29 @@ function loadPage(pagename) {
 	}
 	
 	else if (pagename.startsWith('docr_')) {
-		let docpage = Int(pagename.slice(5, 8));
-		console.log(docpage);
+		let docpage = parseInt(pagename.slice(5, 8));
 		let docname = pagename.slice(9);
-		console.log(docname);
 		document.getElementById('documentread').style.display = 'block';
 		document.getElementById('docrtitle').innerText = game_documents[docname].title;
 		document.getElementById('docrtext').innerHTML = game_documents[docname].text[docpage];
-		document.getElementById('docrback').setAttribute('onClick', 'docr_' )
+		if (docpage != game_documents[docname].minpage) {
+			let backpage = docpage - 1;
+			backpage = ('000' + backpage).substr(-3);
+			document.getElementById('docrback').setAttribute('onClick', 'loadPage("docr_' + backpage + '_' + docname + '");');
+			document.getElementById('docrback').style.opacity = 1;
+		} else {
+			document.getElementById('docrback').setAttribute('onClick', '' );
+			document.getElementById('docrback').style.opacity = 0.5;
+		}
+		if (docpage != game_documents[docname].maxpage) {
+			let nextpage = docpage + 1;
+			nextpage = ('000' + nextpage).substr(-3);
+			document.getElementById('docrnext').setAttribute('onClick', 'loadPage("docr_' + nextpage + '_' + docname + '");');
+			document.getElementById('docrnext').style.opacity = 1;
+		} else {
+			document.getElementById('docrnext').setAttribute('onClick', '' );
+			document.getElementById('docrnext').style.opacity = 0.5;
+		}
 	};
 };
 

@@ -6,10 +6,12 @@ const game_documents = {
 	'nartiad1' : {
 		'title' : 'The Book of Nartiad I',
 		'minpage' : 0,
-		'maxpage' : 1,
+		'maxpage' : 3,
 		'text' : {
 			0 : 'Chapter One',
-			1 : 'Chapter Two'
+			1 : 'Chapter Two',
+			2 : 'Chapter Three',
+			3 : 'Chapter Four'
 		}
 	},
 	'nartiad2' : {
