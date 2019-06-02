@@ -8,13 +8,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="index.css">
 	<script src='player.js'></script>
-	<script src='reference.js'></script>
-	<script src='dialogue.js'></script>
-	<script src='locations.js'></script>
-	<script src='items.js'></script>
-	<script src='skills.js'></script>
-	<script src='dungeons.js'></script>
-	<script src='enemies.js'></script>
+	<script src='data/reference.js'></script>
+	<script src='data/dialogue.js'></script>
+	<script src='data/locations.js'></script>
+	<script src='data/items.js'></script>
+	<script src='data/skills.js'></script>
+	<script src='data/dungeons.js'></script>
+	<script src='data/enemies.js'></script>
+	<script src='system.js'></script>
 	<script src='index.js'></script>
 </head>
 <body>
@@ -31,6 +32,8 @@
 	</ol>
 </div>
 
+<div id='errorbox'></div>
+
 <div class='page' id='dialogue'>
 	<img id='logpfp'/>
 	<div id='logbox'>
@@ -42,6 +45,7 @@
 <div class='page' id='explore'>
 	<back-node onclick='loadPage("defhome")'><i class='fa fa-caret-left'></i> Back</back-node>
 	<h1>Explore</h1>
+	<h2>Under Development</h2>
 </div>
 
 <div class='page' id='stats'>
@@ -54,11 +58,13 @@
 <div class='page' id='items'>
 	<back-node onclick='loadPage("defhome")'><i class='fa fa-caret-left'></i> Back</back-node>
 	<h1>Items</h1>
+	<div id='itemsgroup'></div>
 </div>
 
 <div class='page' id='map'>
 	<back-node onclick='loadPage("defhome")'><i class='fa fa-caret-left'></i> Back</back-node>
 	<h1>Map</h1>
+	<h2>Under Development</h2>
 </div>
 
 <div class='page' id='settings'>
@@ -75,7 +81,16 @@
 	<h3 id='opti_nameapply'>Apply Changes</h3>
 </div>
 
-<script>loadPage('initdio_tutorial001');</script>
+<div class='page' id='documentread'>
+	<back-node onclick='loadPage("items")'><i class='fa fa-caret-left'></i> Back</back-node>
+	<h1 id='docrtitle'></h1>
+	<h2 id='docrtext'></h2>
+	<div class='docarrow' id='docrback'><i class='fa fa-caret-square-o-left'></i> Previous Page </div>
+	<div style='color:#008cff;display:inline;font-size:20px;'>|</div>
+	<div class='docarrow' id='docrnext'> Next Page <i class='fa fa-caret-square-o-right'></i></div>
+</div>
+
+<script>startgame();</script>
 
 </body>
 </html>

@@ -97,6 +97,9 @@ blue-bar div{
 	input {
 		width: 95%;
 	}
+	#logbox {
+		width: 95%;
+	}
 }
 #logbox {
 	background-color: #3b3b3b;
@@ -111,4 +114,20 @@ blue-bar div{
 }
 #logtext {
 	font-size: 20px;
+}
+
+#items h3::before {
+	content: attr(amnt);
+	color: #008cff;
+	transition: 0.4s;
+}
+#items h3:hover::before {
+	color: white;
+}
+
+.docarrow {
+	display: inline;
+	font-size: 20px;
+	color: #008cff;
+	cursor: pointer;
 }

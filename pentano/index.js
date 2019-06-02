@@ -32,9 +32,9 @@ function loadPage(pagename) {
 		document.getElementById('logpfp').src = dialogue[logid].text[player.dialogue_index][1];
 		document.getElementById('logtext').innerText = dialogue[logid].text[player.dialogue_index][2];
 		if (player.dialogue_index == dialogue[logid].perams.last_index) {
-			document.getElementById('logbox').setAttribute( 'onClick', 'loadPage("' + dialogue[logid].perams.endgoto + '")' );
+			document.getElementById('logbox').setAttribute('onClick', 'loadPage("' + dialogue[logid].perams.endgoto + '")');
 		} else {
-			document.getElementById('logbox').setAttribute( 'onClick', 'loadPage("' + pagename + '")' );
+			document.getElementById('logbox').setAttribute('onClick', 'loadPage("' + pagename + '")');
 		}
 	}
 
@@ -61,6 +61,18 @@ function loadPage(pagename) {
 
 	else if (pagename =='items') {
 		document.getElementById('items').style.display = 'block';
+		document.getElementById('itemsgroup').innerHTML = '';
+		for (let i=0; i<player.items.length; i++) {
+			let elm = document.createElement('h3');
+			elm.appendChild(document.createTextNode(player.items[i][0]));
+			let am = document.createAttribute('amnt');
+			am.value = 'x' + player.items[i][1] + ' ';
+			elm.setAttributeNode(am);
+			am = document.createAttribute('onClick');
+			am.value = items[player.items[i][0]].onuse_menu;
+			elm.setAttributeNode(am);
+			document.getElementById('itemsgroup').appendChild(elm);
+		}
 	}
 	
 	else if (pagename =='area') {
@@ -74,13 +86,31 @@ function loadPage(pagename) {
 	else if (pagename =='opti_name') {
 		document.getElementById('settings_name').style.display = 'block';
 		document.getElementById('opti_namefield').value = player.name;
-		document.getElementById('opti_nameapply').setAttribute( 'onClick', 'player.name = ' +
-		'document.getElementById("opti_namefield").value; loadPage("defhome");' );
+		document.getElementById('opti_nameapply').setAttribute('onClick', 'player.name = ' +
+		'document.getElementById("opti_namefield").value; loadPage("defhome");');
 	}
 	
 	else if (pagename =='opti_file') {
 		loadPage('opti');
+	}
+	
+	else if (pagename.startsWith('docr_')) {
+		let docpage = Int(pagename.slice(5, 8));
+		console.log(docpage);
+		let docname = pagename.slice(9);
+		console.log(docname);
+		document.getElementById('documentread').style.display = 'block';
+		document.getElementById('docrtitle').innerText = game_documents[docname].title;
+		document.getElementById('docrtext').innerHTML = game_documents[docname].text[docpage];
+		document.getElementById('docrback').setAttribute('onClick', 'docr_' )
 	};
+};
+
+function error() {};
+
+function startgame() {
+	document.title = system.title;
+	eval(system.startexec);
 };
 
 window.addEventListener('keydown', function (log_key) {
