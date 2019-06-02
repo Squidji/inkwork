@@ -20,7 +20,7 @@
 	<h1 id='h1dhome'>Location, World - Time</h1>
 	<h2 id='h2dhome'>Name - Lv.X  - HP [BAR]</h2>
 	<ol>
-		<li onclick=''>Explore</li>
+		<li onclick='loadPage("explore")'>Explore</li>
 		<li onclick='loadPage("stata")'>Stats</li>
 		<li onclick='loadPage("items")'>Items</li>
 		<li onclick='loadPage("area")'>Map</li>
@@ -34,6 +34,11 @@
 		<div id='logname'></div>
 		<div id='logtext'></div>
 	</div>
+</div>
+
+<div class='page' id='explore'>
+	<back-node onclick='loadPage("defhome")'><i class='fa fa-caret-left'></i> Back</back-node>
+	<h1>Explore</h1>
 </div>
 
 <div class='page' id='stats'>

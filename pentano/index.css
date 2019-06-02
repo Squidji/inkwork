@@ -91,6 +91,9 @@ blue-bar div{
 	#logpfp {
 		width: 95%;
 	}
+	ol {
+		margin-left: 30px;
+	}
 	input {
 		width: 95%;
 	}

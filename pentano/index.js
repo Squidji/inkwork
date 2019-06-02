@@ -38,6 +38,10 @@ function loadPage(pagename) {
 		}
 	}
 
+	else if (pagename =='explore') {
+		document.getElementById('explore').style.display = 'block';
+	}
+
 	else if (pagename == 'stata') {
 		document.getElementById('stats').style.display = 'block';
 		document.getElementById('stathead').innerText = player.name + ' Lv.' + player.level;
@@ -75,7 +79,7 @@ function loadPage(pagename) {
 	}
 	
 	else if (pagename =='opti_file') {
-		//ADD
+		loadPage('opti');
 	};
 };
 
