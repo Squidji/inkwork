@@ -165,7 +165,5 @@ function startgame() {
 };
 
 window.addEventListener('keydown', function (log_key) {
-	if (log_key.code === 'KeyR') {
-		loadPage('initdio_tutorial001');
-	}
+	if (log_key.code === 'KeyR') {};
 });
