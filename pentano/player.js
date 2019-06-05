@@ -2,7 +2,9 @@ var player = {
 	'name' : 'Ano',
 	'location' : 'Tutaria',
 	'world' : 'Ytheres',
-	'level' : 0,
+	'currentload' : '',
+	'previousload' : '',
+	'level' : 1,
 	'xp' : 0,
 	'max_xp' : 0,
 	'hp': 170,
@@ -13,7 +15,7 @@ var player = {
 		['Book of Nartiad I', 1, 1],
 		['Book of Nartiad II', 1, 1]
 	],
-	'pagename' : 'defhome',
-	'dialogue_index' : 0,
-	'timeid' : 2
+	'timeid' : 2,
+	'menuitems' : ['stats', 'items', 'map', 'settings'],
+	'dialogue_index' : 0
 };

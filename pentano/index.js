@@ -5,10 +5,12 @@ function loadPage(pagename) {
 		pages[i].style.display = 'none';
 	}
 
+	player.previousload = player.currentload;
+	player.currentload = pagename;
+
 	if (pagename == 'defhome') {
 		document.getElementById('menu').style.display = 'block';
-		document.getElementById('h1dhome').innerText = player.location +
-		', ' + player.world + ' - ' + reference.time[player.timeid];
+		document.getElementById('h1dhome').innerText = player.location + ' - Menu';
 		document.getElementById('h2dhome').innerHTML = player.name + ' - ' +
 		'Lv. ' + player.level + ' - HP <green-bar><div id="hpihome"></div></green-bar>';
 		player.max_xp + 'xp';
@@ -16,6 +18,15 @@ function loadPage(pagename) {
 		widi = widi * 100;
 		widi = Math.round(widi);
 		document.getElementById('hpihome').style.width = widi + '%';
+		document.getElementById('lihome').innerHTML = '';
+		for (let i=0; i < player.menuitems.length; i++) {
+			let elm = document.createElement('li');
+			elm.appendChild(document.createTextNode(menu_options[player.menuitems[i]].title));
+			document.getElementById('lihome').appendChild(elm);
+			let act = document.createAttribute('onClick');
+			act.value = 'loadPage("' + menu_options[player.menuitems[i]].pageload + '");';
+			elm.setAttributeNode(act);
+		};
 	}
 	
 	else if (pagename.startsWith('initdio_')) {
@@ -35,11 +46,24 @@ function loadPage(pagename) {
 			document.getElementById('logbox').setAttribute('onClick', 'loadPage("' + dialogue[logid].perams.endgoto + '")');
 		} else {
 			document.getElementById('logbox').setAttribute('onClick', 'loadPage("' + pagename + '")');
-		}
+		};
 	}
 
 	else if (pagename =='explore') {
+		document.getElementById('explchoices').innerHTML = '';
 		document.getElementById('explore').style.display = 'block';
+		document.getElementById('explhead').innerText = player.location +
+		', ' + player.world + ' - ' + reference.time[player.timeid];
+		for (let i=0; i < locations[player.world][player.location].options.length; i++) {
+			if (locations[player.world][player.location].options[i].opentimes.includes(player.timeid)) {
+				let elm = document.createElement('h4');
+				elm.appendChild(document.createTextNode(locations[player.world][player.location].options[i].title));
+				let am = document.createAttribute('onClick');
+				am.value = 'loadPage("' + locations[player.world][player.location].options[i].action + '");';
+				elm.setAttributeNode(am);
+				document.getElementById('explchoices').appendChild(elm);
+			};
+		};
 	}
 
 	else if (pagename == 'stata') {
@@ -72,7 +96,7 @@ function loadPage(pagename) {
 			am.value = items[player.items[i][0]].onuse_menu;
 			elm.setAttributeNode(am);
 			document.getElementById('itemsgroup').appendChild(elm);
-		}
+		};
 	}
 	
 	else if (pagename =='area') {
@@ -107,7 +131,7 @@ function loadPage(pagename) {
 			document.getElementById('docrback').style.opacity = 1;
 		} else {
 			document.getElementById('docrback').setAttribute('onClick', '' );
-			document.getElementById('docrback').style.opacity = 0.5;
+			document.getElementById('docrback').style.opacity = 0.3;
 		}
 		if (docpage != game_documents[docname].maxpage) {
 			let nextpage = docpage + 1;
@@ -116,8 +140,20 @@ function loadPage(pagename) {
 			document.getElementById('docrnext').style.opacity = 1;
 		} else {
 			document.getElementById('docrnext').setAttribute('onClick', '' );
-			document.getElementById('docrnext').style.opacity = 0.5;
+			document.getElementById('docrnext').style.opacity = 0.3;
 		}
+	}
+	
+	else if (pagename.startsWith('shop_')) {
+		document.getElementById('shop').style.display = 'block';
+	}
+	
+	else if (pagename.startsWith('htl_')) {
+		document.getElementById('hotel').style.display = 'block';
+	}
+	
+	else if (pagename.startsWith('dgn_')) {
+		document.getElementById('dungeon').style.display = 'block';
 	};
 };
 

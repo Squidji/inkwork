@@ -15,21 +15,17 @@
 	<script src='data/skills.js'></script>
 	<script src='data/dungeons.js'></script>
 	<script src='data/enemies.js'></script>
+	<script src='data/shop.js'></script>
 	<script src='system.js'></script>
 	<script src='index.js'></script>
 </head>
 <body>
 
 <div class='page' id='menu'>
+	<back-node onclick='loadPage("explore")'><i class='fa fa-caret-square-o-up'></i> Close</back-node>
 	<h1 id='h1dhome'>Location, World - Time</h1>
 	<h2 id='h2dhome'>Name - Lv.X  - HP [BAR]</h2>
-	<ol>
-		<li onclick='loadPage("explore")'>Explore</li>
-		<li onclick='loadPage("stata")'>Stats</li>
-		<li onclick='loadPage("items")'>Items</li>
-		<li onclick='loadPage("area")'>Map</li>
-		<li onclick='loadPage("opti")'>Settings</li>
-	</ol>
+	<ol id='lihome'></ol>
 </div>
 
 <div id='errorbox'></div>
@@ -43,9 +39,9 @@
 </div>
 
 <div class='page' id='explore'>
-	<back-node onclick='loadPage("defhome")'><i class='fa fa-caret-left'></i> Back</back-node>
-	<h1>Explore</h1>
-	<h2>Under Development</h2>
+	<back-node onclick='loadPage("defhome")'><i class='fa fa-caret-square-o-down'></i> Menu</back-node>
+	<h1 id='explhead'>Loacation, World - Time</h1>
+	<div id='explchoices'></div>
 </div>
 
 <div class='page' id='stats'>
@@ -88,6 +84,30 @@
 	<div class='docarrow' id='docrback'><i class='fa fa-caret-square-o-left'></i> Previous </div>
 	<div style='color:#008cff;display:inline;font-size:20px;'>|</div>
 	<div class='docarrow' id='docrnext'> Next <i class='fa fa-caret-square-o-right'></i></div>
+</div>
+
+<div class='page' id='navlink'>
+	<back-node onclick='loadPage("defhome")'><i class='fa fa-caret-left'></i> Back</back-node>
+	<h1>NAV LiNK</h1>
+	<h2>Under Development</h2>
+</div>
+
+<div class='page' id='dungeon'>
+	<back-node onclick='loadPage("explore")'><i class='fa fa-caret-left'></i> Back</back-node>
+	<h1>Dungeon</h1>
+	<h2>Under Development</h2>
+</div>
+
+<div class='page' id='shop'>
+	<back-node onclick='loadPage("explore")'><i class='fa fa-caret-left'></i> Back</back-node>
+	<h1>Shop</h1>
+	<h2>Under Development</h2>
+</div>
+
+<div class='page' id='hotel'>
+	<back-node onclick='loadPage("explore")'><i class='fa fa-caret-left'></i> Back</back-node>
+	<h1>Hotel</h1>
+	<h2>Under Development</h2>
 </div>
 
 <script>startgame();</script>

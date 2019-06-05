@@ -14,5 +14,21 @@ const items = {
 		'cansell' : false,
 		'basevalue' : 0,
 		'onetimeuse' : false
+	},
+	'Bandage' : {
+		'type' : 'heal', //Heal 20HP
+		'onuse_menu' : '',
+		'onuse_battle' : '',
+		'cansell' : true,
+		'basevalue' : 10,
+		'onetimeuse' : true
+	},
+	'Plain Roast' : {
+		'type' : 'heal', //Heal 5 MNA
+		'onuse_menu' : '',
+		'onuse_battle' : '',
+		'cansell' : true,
+		'basevalue' : 15,
+		'onetimeuse' : true
 	}
 };

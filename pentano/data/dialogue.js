@@ -1,5 +1,5 @@
 const dialogue = {
-	'tutorial001': {
+	'test000': {
 		'perams' : {'last_index' : 2, 'endgoto' : 'defhome'},
 		'text': [
 			['Testman', 'diopfps/def.png', 'Hello. Click on the dialogue box to continue.'],

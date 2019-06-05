@@ -1,4 +1,4 @@
 var system = {
 	title : 'Pentano',
-	startexec : 'loadPage("initdio_tutorial001");'
+	startexec : 'loadPage("initdio_test000");',
 };

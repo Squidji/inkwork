@@ -2,6 +2,25 @@ const reference  = {
 	'time' : ['Sunrise', 'Morning', 'Noon', 'Afternoon', 'Sunset', 'Night', 'Midnight', 'Night']
 };
 
+const menu_options = {
+	'stats' : {
+		'title' : 'Stats',
+		'pageload' : 'stata'
+	},
+	'items' : {
+		'title' : 'Items',
+		'pageload' : 'items'
+	},
+	'map' : {
+		'title' : 'Map',
+		'pageload' : 'area'
+	},
+	'settings' : {
+		'title' : 'Settings',
+		'pageload' : 'opti'
+	}
+};
+
 const game_documents = {
 	'nartiad1' : {
 		'title' : 'The Book of Nartiad I',
@@ -23,4 +42,4 @@ const game_documents = {
 			1 : 'Chapter Two'
 		}
 	}
-}
+};
