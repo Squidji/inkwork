@@ -6,7 +6,7 @@ const shops = {
         ]
     },
     'tutaria_cafeytheria' : {
-        'title' : 'Tutaria General',
+        'title' : 'Café Ytheria',
         'items' : [
             {'item' : 'Plain Roast', 'cost' : Math.round(items['Plain Roast'].basevalue * 1.4)}
         ]

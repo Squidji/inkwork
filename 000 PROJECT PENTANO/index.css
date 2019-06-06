@@ -98,20 +98,6 @@ blue-bar div{
 #logpfp {
 	width: 400px;
 }
-@media screen and (max-width: 500px) {
-	#logpfp {
-		width: 95%;
-	}
-	ol {
-		margin-left: 30px;
-	}
-	input {
-		width: 95%;
-	}
-	#logbox {
-		width: 95%;
-	}
-}
 #logbox {
 	background-color: #3b3b3b;
 	padding: 20px;
@@ -141,4 +127,43 @@ blue-bar div{
 	font-size: 20px;
 	color: #008cff;
 	cursor: pointer;
+}
+#menu, #stats, #items, #map, #settings, #settings_name, #documentread {
+	border-bottom: #008cff 10px solid;
+	background-color: #3b3b3b;
+	padding-bottom: 20px;
+	padding-left: 10px;
+	padding-top: 10px;
+	border-radius: 0px 10px 10px 10px;
+}
+#menu green-bar, #stats green-bar, #settings_name input {
+	background-color: #1d1d1d;
+}
+#documentread {
+	border-bottom-color: gold;
+}
+#documentread h1, #documentread .docarrow {
+	color: gold;
+}
+
+@media screen and (max-width: 500px) {
+	#logpfp {
+		width: 95%;
+	}
+	ol {
+		margin-left: 30px;
+	}
+	input {
+		width: 95%;
+	}
+	#logbox {
+		width: 85%;
+	}
+	#explore #explchoices h4 {
+		border-bottom: #008cff 3px solid;
+		margin-bottom: 5px;
+	}
+	body {
+		width: 90%;
+	}
 }

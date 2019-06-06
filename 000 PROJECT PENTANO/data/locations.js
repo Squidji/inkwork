@@ -12,7 +12,7 @@ const locations = {
 				},
 				{
 					'title' : 'Café Ytheria',
-					'action' : 'shop_tutariageneral',
+					'action' : 'shop_tutaria_cafeytheria',
 					'icon_name' : 'fa fa-coffee',
 					'opentimes' : [0,1,2,3,4]
 				},

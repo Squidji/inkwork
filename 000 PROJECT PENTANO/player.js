@@ -12,8 +12,8 @@ var player = {
 	'mna' : 20,
 	'max_mna' : 20,
 	'items' : [
-		['Book of Nartiad I', 1, 1],
-		['Book of Nartiad II', 1, 1]
+		['Book of Nartiad I', 1],
+		['Book of Nartiad II', 1]
 	],
 	'timeid' : 2,
 	'menuitems' : ['stats', 'items', 'map', 'settings'],

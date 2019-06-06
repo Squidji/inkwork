@@ -8,10 +8,14 @@ function loadPage(pagename) {
 	player.previousload = player.currentload;
 	player.currentload = pagename;
 
+	if (player.timeid == 8) {
+		player.timeid = 0;
+	}
+
 	if (pagename == 'defhome') {
 		document.getElementById('menu').style.display = 'block';
-		document.getElementById('h1dhome').innerText = player.location + ' - Menu';
-		document.getElementById('h2dhome').innerHTML = player.name + ' - ' +
+		document.getElementById('h1dhome').innerText = player.name + ' - Menu';
+		document.getElementById('h2dhome').innerHTML = player.location + ' - ' +
 		'Lv. ' + player.level + ' - HP <green-bar><div id="hpihome"></div></green-bar>';
 		player.max_xp + 'xp';
 		let widi = player.hp / player.max_hp;
@@ -145,7 +149,9 @@ function loadPage(pagename) {
 	}
 	
 	else if (pagename.startsWith('shop_')) {
+		let shopname = pagename.slice(5);
 		document.getElementById('shop').style.display = 'block';
+		document.getElementById('shoph1').innerText = shops[shopname].title;
 	}
 	
 	else if (pagename.startsWith('htl_')) {
@@ -153,7 +159,9 @@ function loadPage(pagename) {
 	}
 	
 	else if (pagename.startsWith('dgn_')) {
+		let dngname = pagename.slice(7);
 		document.getElementById('dungeon').style.display = 'block';
+		document.getElementById('dgnh1').innerText = dungeons[dngname].title;
 	};
 };
 
