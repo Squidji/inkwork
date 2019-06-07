@@ -178,7 +178,7 @@ blue-bar div{
 		border-radius: 0px 0px 20px 20px;
 		margin-top: 1px;
 	}
-	#explore #explchoices h4, #menu #homeopt h4{
+	#explore #explchoices h4 {
 		border-bottom: #008cff 3px solid;
 		margin-bottom: 5px;
 	}
