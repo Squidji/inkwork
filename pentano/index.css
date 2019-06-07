@@ -145,6 +145,23 @@ blue-bar div{
 #documentread h1, #documentread .docarrow {
 	color: gold;
 }
+#homeopt {
+	padding-left: 3px;
+}
+
+#shopitems h4::after {
+	content: attr(cst);
+	color: #008cff;
+	transition: 0.3s;
+}
+#shopitems h4:hover::after {
+	color: gold;
+}
+#statbar4 {
+	color: gold;
+	font-size: 40px;
+	margin-bottom: 0px;
+}
 
 @media screen and (max-width: 500px) {
 	#logpfp {
@@ -157,11 +174,16 @@ blue-bar div{
 		width: 95%;
 	}
 	#logbox {
-		width: 85%;
+		width: 83.3%;
+		border-radius: 0px 0px 20px 20px;
+		margin-top: 1px;
 	}
-	#explore #explchoices h4 {
+	#explore #explchoices h4, #menu #homeopt h4{
 		border-bottom: #008cff 3px solid;
 		margin-bottom: 5px;
+	}
+	#menu #homeopt h4 {
+		width: 80%;
 	}
 	body {
 		width: 90%;

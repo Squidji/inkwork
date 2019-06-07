@@ -12,7 +12,7 @@ function loadPage(pagename) {
 		player.timeid = 0;
 	}
 
-	if (pagename == 'defhome') {
+	if (pagename == 'menu') {
 		document.getElementById('menu').style.display = 'block';
 		document.getElementById('h1dhome').innerText = player.name + ' - Menu';
 		document.getElementById('h2dhome').innerHTML = player.location + ' - ' +
@@ -22,11 +22,11 @@ function loadPage(pagename) {
 		widi = widi * 100;
 		widi = Math.round(widi);
 		document.getElementById('hpihome').style.width = widi + '%';
-		document.getElementById('lihome').innerHTML = '';
+		document.getElementById('homeopt').innerHTML = '';
 		for (let i=0; i < player.menuitems.length; i++) {
-			let elm = document.createElement('li');
+			let elm = document.createElement('h4');
 			elm.appendChild(document.createTextNode(menu_options[player.menuitems[i]].title));
-			document.getElementById('lihome').appendChild(elm);
+			document.getElementById('homeopt').appendChild(elm);
 			let act = document.createAttribute('onClick');
 			act.value = 'loadPage("' + menu_options[player.menuitems[i]].pageload + '");';
 			elm.setAttributeNode(act);
@@ -77,6 +77,7 @@ function loadPage(pagename) {
 		'</div></green-bar> ' + player.hp + '/' + player.max_hp;
 		document.getElementById('statbar3').innerHTML = 'MNA <blue-bar><div id="statmna">' +
 		'</div></blue-bar> ' + player.mna + '/' + player.max_mna;
+		document.getElementById('statbar4').innerText = player.money + currency;
 		let hpw = player.hp / player.max_hp;
 		hpw = hpw * 100;
 		hpw = Math.round(hpw);
@@ -115,7 +116,7 @@ function loadPage(pagename) {
 		document.getElementById('settings_name').style.display = 'block';
 		document.getElementById('opti_namefield').value = player.name;
 		document.getElementById('opti_nameapply').setAttribute('onClick', 'player.name = ' +
-		'document.getElementById("opti_namefield").value; loadPage("defhome");');
+		'document.getElementById("opti_namefield").value; loadPage("menu");');
 	}
 	
 	else if (pagename =='opti_file') {
@@ -152,6 +153,15 @@ function loadPage(pagename) {
 		let shopname = pagename.slice(5);
 		document.getElementById('shop').style.display = 'block';
 		document.getElementById('shoph1').innerText = shops[shopname].title;
+		document.getElementById('shopitems').innerHTML = '';
+		for (let i=0; i<shops[shopname].items.length; i++) {
+			let elm = document.createElement('h4');
+			elm.appendChild(document.createTextNode(shops[shopname].items[i].item));
+			let aft = document.createAttribute('cst');
+			aft.value = ' ' + shops[shopname].items[i].cost + currency
+			elm.setAttributeNode(aft);
+			document.getElementById('shopitems').appendChild(elm);
+		}
 	}
 	
 	else if (pagename.startsWith('htl_')) {
@@ -173,5 +183,5 @@ function startgame() {
 };
 
 window.addEventListener('keydown', function (log_key) {
-	if (log_key.code === 'KeyR') {};
+	if (log_key.code === 'KeyQ') {};
 });

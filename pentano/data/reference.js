@@ -1,6 +1,8 @@
-const reference  = {
+const reference = {
 	'time' : ['Sunrise', 'Morning', 'Noon', 'Afternoon', 'Sunset', 'Night', 'Midnight', 'Night']
 };
+
+const currency = 'G'
 
 const menu_options = {
 	'stats' : {

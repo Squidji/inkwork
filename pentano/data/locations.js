@@ -11,8 +11,8 @@ const locations = {
 					'opentimes' : [1,2,3]
 				},
 				{
-					'title' : 'Café Ytheria',
-					'action' : 'shop_tutaria_cafeytheria',
+					'title' : 'Café Yther',
+					'action' : 'shop_tutaria_cafeyther',
 					'icon_name' : 'fa fa-coffee',
 					'opentimes' : [0,1,2,3,4]
 				},
