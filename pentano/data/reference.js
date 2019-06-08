@@ -1,3 +1,8 @@
+var system = {
+	title : 'Pentano',
+	startexec : 'loadPage("explore");',
+};
+
 const reference = {
 	'time' : ['Sunrise', 'Morning', 'Noon', 'Afternoon', 'Sunset', 'Night', 'Midnight', 'Night']
 };
@@ -7,7 +12,7 @@ const currency = 'G'
 const menu_options = {
 	'stats' : {
 		'title' : 'Stats',
-		'pageload' : 'stata'
+		'pageload' : 'sata'
 	},
 	'items' : {
 		'title' : 'Items',
@@ -15,7 +20,7 @@ const menu_options = {
 	},
 	'map' : {
 		'title' : 'Map',
-		'pageload' : 'area'
+		'pageload' : 'map'
 	},
 	'settings' : {
 		'title' : 'Settings',

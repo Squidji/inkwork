@@ -65,6 +65,31 @@ input {
 	margin-bottom: 10px;
 }
 
+#errorbox {
+	display: none;
+	background-color: #ff3b3b;
+	color: black;
+	border-radius: 10px;
+	border: solid #940000 4px;
+	width: 90%;
+	font-size : 25px;
+	padding: 7px;
+	margin-bottom: 25px;
+	cursor: pointer;
+}
+#successbox {
+	display: none;
+	background-color: #2dff2d;
+	color: black;
+	border-radius: 10px;
+	border: solid #01812c 4px;
+	width: 90%;
+	font-size : 25px;
+	padding: 7px;
+	margin-bottom: 25px;
+	cursor: pointer;
+}
+
 .page {
 	display: none;
 }
@@ -149,6 +174,10 @@ blue-bar div{
 	padding-left: 3px;
 }
 
+#shoph2::after {
+	content: attr(mval);
+	color: gold;
+}
 #shopitems h4::after {
 	content: attr(cst);
 	color: #008cff;
@@ -178,7 +207,7 @@ blue-bar div{
 		border-radius: 0px 0px 20px 20px;
 		margin-top: 1px;
 	}
-	#explore #explchoices h4 {
+	#explore #explchoices h4{
 		border-bottom: #008cff 3px solid;
 		margin-bottom: 5px;
 	}

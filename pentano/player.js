@@ -11,7 +11,7 @@ var player = {
 	'max_hp' : 200,
 	'mna' : 20,
 	'max_mna' : 20,
-	'money' : 0,
+	'money' : 50,
 	'enrgy' : 100,
 	'max_enrgy' : 100,
 	'items' : [

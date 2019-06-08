@@ -16,10 +16,12 @@
 	<script src='data/dungeons.js'></script>
 	<script src='data/enemies.js'></script>
 	<script src='data/shop.js'></script>
-	<script src='system.js'></script>
 	<script src='index.js'></script>
 </head>
 <body>
+
+<div id='errorbox' onclick='document.getElementById("errorbox").style.display = "none"'></div>
+<div id='successbox' onclick='document.getElementById("successbox").style.display = "none"'></div>
 
 <div class='page' id='menu'>
 	<back-node onclick='loadPage("explore")'><i class='fa fa-times'></i> Close</back-node>
@@ -27,8 +29,6 @@
 	<h2 id='h2dhome'>Name - Lv.X  - HP [BAR]</h2>
 	<div id='homeopt'></div>
 </div>
-
-<div id='errorbox'></div>
 
 <div class='page' id='dialogue'>
 	<img id='logpfp'/>
@@ -102,6 +102,7 @@
 <div class='page' id='shop'>
 	<back-node onclick='loadPage("explore")'><i class='fa fa-caret-left'></i> Back</back-node>
 	<h1 id='shoph1'>Shop</h1>
+	<h2 mval='0G' id='shoph2'>Name - </h2>
 	<div id='shopitems'></div>
 </div>
 

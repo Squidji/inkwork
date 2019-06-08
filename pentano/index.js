@@ -1,9 +1,12 @@
-function loadPage(pagename) {
+function loadPage(pagename, perama, peramb, peramc, peramd) {
 
 	var pages = document.getElementsByClassName('page');
 	for (i = 0; i < pages.length; i++) {
 		pages[i].style.display = 'none';
 	}
+	
+	document.getElementById('errorbox').style.display = 'none';
+	document.getElementById('successbox').style.display = 'none';
 
 	player.previousload = player.currentload;
 	player.currentload = pagename;
@@ -11,7 +14,7 @@ function loadPage(pagename) {
 	if (player.timeid == 8) {
 		player.timeid = 0;
 	}
-
+	
 	if (pagename == 'menu') {
 		document.getElementById('menu').style.display = 'block';
 		document.getElementById('h1dhome').innerText = player.name + ' - Menu';
@@ -32,28 +35,8 @@ function loadPage(pagename) {
 			elm.setAttributeNode(act);
 		};
 	}
-	
-	else if (pagename.startsWith('initdio_')) {
-		var logid = pagename.slice(8);
-		player.dialogue_index = 0-1;
-		loadPage('dio_' + logid);
-	}
 
-	else if (pagename.startsWith('dio_')) {
-		var logid = pagename.slice(4);
-		player.dialogue_index++;
-		document.getElementById('dialogue').style.display = 'block';
-		document.getElementById('logname').innerText = dialogue[logid].text[player.dialogue_index][0];
-		document.getElementById('logpfp').src = dialogue[logid].text[player.dialogue_index][1];
-		document.getElementById('logtext').innerText = dialogue[logid].text[player.dialogue_index][2];
-		if (player.dialogue_index == dialogue[logid].perams.last_index) {
-			document.getElementById('logbox').setAttribute('onClick', 'loadPage("' + dialogue[logid].perams.endgoto + '")');
-		} else {
-			document.getElementById('logbox').setAttribute('onClick', 'loadPage("' + pagename + '")');
-		};
-	}
-
-	else if (pagename =='explore') {
+	else if (pagename == 'explore') {
 		document.getElementById('explchoices').innerHTML = '';
 		document.getElementById('explore').style.display = 'block';
 		document.getElementById('explhead').innerText = player.location +
@@ -63,14 +46,36 @@ function loadPage(pagename) {
 				let elm = document.createElement('h4');
 				elm.appendChild(document.createTextNode(locations[player.world][player.location].options[i].title));
 				let am = document.createAttribute('onClick');
-				am.value = 'loadPage("' + locations[player.world][player.location].options[i].action + '");';
+				let op = locations[player.world][player.location].options[i]
+				am.value = 'loadPage(' + op.action + ', ' + op.perama + ', ' + op.peramb + ', ' + 
+				op.peramc + ', ' + op.peramd + ');';
 				elm.setAttributeNode(am);
 				document.getElementById('explchoices').appendChild(elm);
 			};
 		};
 	}
 
-	else if (pagename == 'stata') {
+	else if (pagename == 'initdio') {
+		// perama = dialogue id
+		player.dialogue_index = 0-1;
+		loadPage('dio', perama);
+	}
+
+	else if (pagename == 'dio') {
+		//perama = dialogue id
+		player.dialogue_index++;
+		document.getElementById('dialogue').style.display = 'block';
+		document.getElementById('logname').innerText = dialogue[perama].text[player.dialogue_index][0];
+		document.getElementById('logpfp').src = dialogue[perama].text[player.dialogue_index][1];
+		document.getElementById('logtext').innerText = dialogue[perama].text[player.dialogue_index][2];
+		if (player.dialogue_index == dialogue[perama].perams.last_index) {
+			document.getElementById('logbox').setAttribute('onClick', 'loadPage("' + dialogue[perama].perams.endgoto + '")');
+		} else {
+			document.getElementById('logbox').setAttribute('onClick', 'loadPage("' + pagename + '")');
+		};
+	}
+
+	else if (pagename == 'sata') {
 		document.getElementById('stats').style.display = 'block';
 		document.getElementById('stathead').innerText = player.name + ' Lv.' + player.level;
 		document.getElementById('statbar2').innerHTML = 'HP <green-bar><div id="stathp">' +
@@ -88,7 +93,7 @@ function loadPage(pagename) {
 		document.getElementById('statmna').style.width = mnaw + '%';
 	}
 
-	else if (pagename =='items') {
+	else if (pagename == 'items') {
 		document.getElementById('items').style.display = 'block';
 		document.getElementById('itemsgroup').innerHTML = '';
 		for (let i=0; i<player.items.length; i++) {
@@ -97,85 +102,131 @@ function loadPage(pagename) {
 			let am = document.createAttribute('amnt');
 			am.value = 'x' + player.items[i][1] + ' ';
 			elm.setAttributeNode(am);
-			am = document.createAttribute('onClick');
-			am.value = items[player.items[i][0]].onuse_menu;
+			am = document.createAttribute('onclick');
+			am.value = 'items["' + player.items[i][0] + '"].onuse_menu();';
 			elm.setAttributeNode(am);
 			document.getElementById('itemsgroup').appendChild(elm);
 		};
 	}
-	
-	else if (pagename =='area') {
+
+	else if (pagename == 'map') {
 		document.getElementById('map').style.display = 'block';
 	}
 
-	else if (pagename =='opti') {
+	else if (pagename == 'opti') {
 		document.getElementById('settings').style.display = 'block';
 	}
 
-	else if (pagename =='opti_name') {
+	else if (pagename == 'opti_name') {
 		document.getElementById('settings_name').style.display = 'block';
 		document.getElementById('opti_namefield').value = player.name;
 		document.getElementById('opti_nameapply').setAttribute('onClick', 'player.name = ' +
 		'document.getElementById("opti_namefield").value; loadPage("menu");');
 	}
-	
-	else if (pagename =='opti_file') {
+
+	else if (pagename == 'opti_file') {
 		loadPage('opti');
+		error('Under Development');
 	}
-	
-	else if (pagename.startsWith('docr_')) {
-		let docpage = parseInt(pagename.slice(5, 8));
-		let docname = pagename.slice(9);
+
+	else if (pagename =='docr') {
+		// perama = docname
+		// peramb = docpage
 		document.getElementById('documentread').style.display = 'block';
-		document.getElementById('docrtitle').innerText = game_documents[docname].title;
-		document.getElementById('docrtext').innerHTML = game_documents[docname].text[docpage];
-		if (docpage != game_documents[docname].minpage) {
-			let backpage = docpage - 1;
-			backpage = ('000' + backpage).substr(-3);
-			document.getElementById('docrback').setAttribute('onClick', 'loadPage("docr_' + backpage + '_' + docname + '");');
+		document.getElementById('docrtitle').innerText = game_documents[perama].title;
+		document.getElementById('docrtext').innerHTML = game_documents[perama].text[peramb];
+		if (peramb != game_documents[perama].minpage) {
+			let backpage = peramb - 1;
+			document.getElementById('docrback').setAttribute('onClick', 'loadPage("docr", "' + 
+			perama + '", ' + backpage + ');');
 			document.getElementById('docrback').style.opacity = 1;
 		} else {
 			document.getElementById('docrback').setAttribute('onClick', '' );
 			document.getElementById('docrback').style.opacity = 0.3;
 		}
-		if (docpage != game_documents[docname].maxpage) {
-			let nextpage = docpage + 1;
-			nextpage = ('000' + nextpage).substr(-3);
-			document.getElementById('docrnext').setAttribute('onClick', 'loadPage("docr_' + nextpage + '_' + docname + '");');
+		if (peramb != game_documents[perama].maxpage) {
+			let nextpage = peramb + 1;
+			document.getElementById('docrnext').setAttribute('onClick', 'loadPage("docr", "' + 
+			perama + '", ' + nextpage + ');');
 			document.getElementById('docrnext').style.opacity = 1;
 		} else {
 			document.getElementById('docrnext').setAttribute('onClick', '' );
 			document.getElementById('docrnext').style.opacity = 0.3;
 		}
 	}
-	
-	else if (pagename.startsWith('shop_')) {
-		let shopname = pagename.slice(5);
+
+	else if (pagename == 'shop') {
+		//perama = shopname
 		document.getElementById('shop').style.display = 'block';
-		document.getElementById('shoph1').innerText = shops[shopname].title;
+		document.getElementById('shoph1').innerText = shops[perama].title;
+		document.getElementById('shoph2').innerText = player.name + ' - '
+		document.getElementById('shoph2').setAttribute('mval', '' + player.money + currency);
 		document.getElementById('shopitems').innerHTML = '';
-		for (let i=0; i<shops[shopname].items.length; i++) {
+		for (let i=0; i<shops[perama].items.length; i++) {
 			let elm = document.createElement('h4');
-			elm.appendChild(document.createTextNode(shops[shopname].items[i].item));
+			if (shops[perama].items[i].number == 1) {
+				elm.appendChild(document.createTextNode(shops[perama].items[i].item));
+			} else if (shops[perama].items[i].number > 1) {
+				elm.appendChild(document.createTextNode(shops[perama].items[i].item + 
+				' x' + shops[perama].items[i].number));
+			}
 			let aft = document.createAttribute('cst');
-			aft.value = ' ' + shops[shopname].items[i].cost + currency
+			aft.value = ' ' + shops[perama].items[i].cost + currency
 			elm.setAttributeNode(aft);
+			let clk = document.createAttribute('onclick');
+			clk.value = 'buyShopItem("' + perama + '", "' + shops[perama].items[i].item + '", ' + 
+			shops[perama].items[i].number + ', ' + shops[perama].items[i].cost + ');';
+			elm.setAttributeNode(clk);
 			document.getElementById('shopitems').appendChild(elm);
 		}
 	}
-	
-	else if (pagename.startsWith('htl_')) {
+
+	else if (pagename.startsWith('htl')) {
 		document.getElementById('hotel').style.display = 'block';
 	}
 	
-	else if (pagename.startsWith('dgn_')) {
-		let dngname = pagename.slice(7);
+	else if (pagename.startsWith('dgn')) {
+		// perama = dungeonid
+		// peramb = player start x
+		// peramc = player start y
 		document.getElementById('dungeon').style.display = 'block';
-		document.getElementById('dgnh1').innerText = dungeons[dngname].title;
+		document.getElementById('dgnh1').innerText = dungeons[perama].title;
 	};
+}
+
+function error(message) {
+	document.getElementById('errorbox').style.display = 'block';
+	document.getElementById('errorbox').innerText = message;
 };
 
-function error() {};
+function success(message) {
+	document.getElementById('successbox').style.display = 'block';
+	document.getElementById('successbox').innerText = message;
+}
+
+function additem(itemid, number) { //adds item to inventory
+	let findyes = false;
+	for (let i=0; i<player.items.length; i++) {
+		if (player.items[i][0] == itemid) {
+			player.items[i][1] += number;
+			findyes = true;
+		};
+	};
+	if (findyes == false) {
+		player.items.push([itemid, number]);
+	}
+};
+
+function buyShopItem(shopname, itemid, number, price) {
+	if (player.money >= price) {
+		document.getElementById('errorbox').style.display = 'none';
+		success('Successful Purchase');
+		player.money -= price;
+		additem(itemid, number);
+	} else {
+		error('You don\'t have enough money to buy this.');
+	}
+};
 
 function startgame() {
 	document.title = system.title;
