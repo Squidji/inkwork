@@ -195,11 +195,13 @@ function loadPage(pagename, perama, peramb, peramc, peramd) {
 }
 
 function error(message) {
+	document.getElementById('successbox').style.display = 'none';
 	document.getElementById('errorbox').style.display = 'block';
 	document.getElementById('errorbox').innerText = message;
 };
 
 function success(message) {
+	document.getElementById('errorbox').style.display = 'none';
 	document.getElementById('successbox').style.display = 'block';
 	document.getElementById('successbox').innerText = message;
 }
@@ -219,10 +221,11 @@ function additem(itemid, number) { //adds item to inventory
 
 function buyShopItem(shopname, itemid, number, price) {
 	if (player.money >= price) {
-		document.getElementById('errorbox').style.display = 'none';
-		success('Successful Purchase');
+
 		player.money -= price;
 		additem(itemid, number);
+		loadPage('shop', shopname);
+		success('Successful Purchase');
 	} else {
 		error('You don\'t have enough money to buy this.');
 	}
