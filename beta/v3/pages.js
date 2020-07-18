@@ -13,6 +13,7 @@ function openTab(i) {
 	$('#tabs h2').attr('sel', 'false');
 	$('#'+i+'tab').attr('sel', 'true');
 	openPage(i+'list');
+	closeNav();
 };
 
 function slidenext(id,i) {
@@ -36,7 +37,22 @@ function hashpage() {
 	}
 };
 
-function openNav(i) {
-	document.getElementById('tabs').style.width = i+'%';
-	document.getElementById('tabs').style.opacity = i+'%';
+function openNav() {
+	if (screen.width < 1081) {
+		document.getElementById('tabs').style.width = '100%';
+		document.getElementById('tabs').style.opacity = '1';
+		document.getElementById('x').style.display = 'block';
+		document.getElementById('socials').style.display = 'block';
+		document.getElementById('socials').style.opacity = '1';
+	};
+};
+
+function closeNav() {
+	if (screen.width < 1081) {
+		document.getElementById('tabs').style.width = '0%';
+		document.getElementById('tabs').style.opacity = '0';
+		document.getElementById('x').style.display = 'none';
+		document.getElementById('socials').style.opacity = '0';
+		document.getElementById('socials').style.display = 'none';
+	};
 };
